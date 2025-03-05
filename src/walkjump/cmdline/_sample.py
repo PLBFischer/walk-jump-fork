@@ -26,11 +26,11 @@ def write_list_to_csv(string_list, csv_path):
 
 @hydra.main(version_base=None, config_path="../hydra_config", config_name="sample")
 def sample(cfg: DictConfig) -> bool:
-    log_cfg = OmegaConf.to_container(cfg, throw_on_missing=True, resolve=True)
+    #log_cfg = OmegaConf.to_container(cfg, throw_on_missing=True, resolve=True)
 
     wandb.require("service")
-    if rank_zero_only.rank == 0:
-        print(OmegaConf.to_yaml(log_cfg))
+    #if rank_zero_only.rank == 0:
+    #    print(OmegaConf.to_yaml(log_cfg))
 
     hydra.utils.instantiate(cfg.setup)
 
@@ -45,11 +45,11 @@ def sample(cfg: DictConfig) -> bool:
     mask_idxs = instantiate_redesign_mask([])
 
     seeds = instantiate_seeds(cfg.designs)
-    
+
     # TOTRACK
     #if not cfg.dryrun:
     if True:
-        model = hydra.utils.instantiate(cfg.model).to(device)
+        model = hydra.utils.instantiate(cfg.model,_recursive_=False).to(device)
         sample_df = walkjump(
             seeds,
             model,
@@ -58,7 +58,7 @@ def sample(cfg: DictConfig) -> bool:
             friction=cfg.langevin.friction,
             steps=cfg.langevin.steps,
             num_samples=cfg.designs.num_samples,
-            mask_idxs=mask_idxs,
+            #mask_idxs=mask_idxs,
             chunksize=cfg.designs.chunksize,
         )
         # TOTRACK

@@ -1,14 +1,20 @@
 defaults:
     - _self_
+    - data: poas.yaml
+    - model: denoise.yaml
+    - callbacks: default.yaml
+    - logger: wandb.yaml
+    - trainer: default.yaml
     - setup: default
 
-model:
-  _target_: walkjump.cmdline.utils.instantiate_model_for_sample_mode
-  model_type: denoise
-  # TOTRACK
-  checkpoint_path: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/checkpoints/running_checkpoint.ckpt
-  #checkpoint_path: ???
-  denoise_path: null
+#model:
+#  _target_: walkjump.cmdline.utils.instantiate_model_for_sample_mode
+#  sample_mode_model_cfg:
+#    model_type: denoise
+#    # TOTRACK
+#    checkpoint_path: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/checkpoints/running_checkpoint.ckpt
+#    #checkpoint_path: ???
+#    denoise_path: null
 
 langevin:
   sigma: 1.0
@@ -25,9 +31,12 @@ designs:
   # TOTRACK
   seeds: '/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv'
   #seeds: denovo
-  num_samples: 100
+  #num_samples: 100
+  num_samples: 1
   # TOTRACK
   #limit_seeds: 10
   limit_seeds: false
+  chunksize: 8
+
 
 device: null

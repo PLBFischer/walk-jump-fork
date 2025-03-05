@@ -5,6 +5,9 @@ import pandas as pd
 import torch
 from lightning.pytorch.callbacks import Callback
 from omegaconf import DictConfig
+from omegaconf.base import ContainerMetadata
+from typing import Any
+
 
 from walkjump.constants import ALPHABET_AHO, LENGTH_FV_HEAVY_AHO, LENGTH_FV_LIGHT_AHO, RANGES_AHO
 from walkjump.data import AbDataset
@@ -73,8 +76,12 @@ def instantiate_model_for_sample_mode(
             checkpoint_path=sample_mode_model_cfg.checkpoint_path,
         ),
     )
+    #torch.serialization.add_safe_globals([DictConfig, ContainerMetadata, Any])
+    torch.serialization.add_safe_globals([DictConfig])
+
     model = model_typer[sample_mode_model_cfg.model_type].load_from_checkpoint(
-        sample_mode_model_cfg.checkpoint_path
+        sample_mode_model_cfg.checkpoint_path,
+        weights_only = False
     )
     if isinstance(model, NoiseEnergyModel) and sample_mode_model_cfg.denoise_path is not None:
         print(
@@ -83,7 +90,7 @@ def instantiate_model_for_sample_mode(
                 model_type="denoise", checkpoint_path=sample_mode_model_cfg.denoise_path
             ),
         )
-        model.denoise_model = DenoiseModel.load_from_checkpoint(sample_mode_model_cfg.denoise_path)
+        model.denoise_model = DenoiseModel.load_from_checkpoint(sample_mode_model_cfg.denoise_path, weights_only = False)
         model.denoise_model.eval()
         model.denoise_model.training = False
 

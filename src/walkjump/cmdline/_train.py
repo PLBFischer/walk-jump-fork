@@ -1,5 +1,7 @@
 # TOTRACK
 #import dotenv
+import torch
+
 import hydra
 import lightning.pytorch as pl
 import wandb
@@ -42,7 +44,8 @@ def train(cfg: DictConfig) -> bool:
     #    trainer.fit(model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
     trainer.fit(model, datamodule=datamodule)
     #IMPORTANT
-    trainer.save_checkpoint("/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/checkpoints/running_checkpoint.ckpt")
+    #trainer.save_checkpoint("/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/checkpoints/running_checkpoint.ckpt")
+    torch.save(model.state_dict(), "/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/checkpoints/running_weights.ckpt")
 
     wandb.finish()
     return True

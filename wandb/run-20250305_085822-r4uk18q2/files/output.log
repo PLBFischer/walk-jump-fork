@@ -1,0 +1,56 @@
+[instantiate_callbacks] Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[instantiate_callbacks] Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[instantiate_callbacks] Instantiating callback <lightning.pytorch.callbacks.LearningRateMonitor>
+Sanity Checking: 0it [00:00, ?it/s]
+/n/home10/pafischer/.local/lib/python3.10/site-packages/lightning/fabric/plugins/environments/slurm.py:166: PossibleUserWarning: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python my_experiment.py ...
+  rank_zero_warn(
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/n/home10/pafischer/.local/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py:612: UserWarning: Checkpoint directory checkpoints exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [MIG-5b36b802-0ab0-5f37-af2d-ac23f40ef62d]
+  | Name  | Type        | Params
+--------------------------------------
+0 | model | ByteNetArch | 1.0 M
+--------------------------------------
+1.0 M     Trainable params
+0         Non-trainable params
+1.0 M     Total params
+
+Sanity Checking DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]
+/n/home10/pafischer/.local/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+
+Epoch 0:   0%|          | 0/2 [00:00<?, ?it/s]
+/n/home10/pafischer/.local/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/n/home10/pafischer/.local/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py:1600: PossibleUserWarning: The number of training batches (1) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+Epoch 0: 100%|██████████| 2/2 [00:04<00:00,  2.33s/it, loss=0.351, v_num=18q2]
+Epoch 0, global step 1: 'val_loss' reached 0.33286 (best 0.33286), saving model to 'checkpoints/epoch=0-step=1-val_loss=0.3329.ckpt' as top 1
+Epoch 1, global step 2: 'val_loss' reached 0.22300 (best 0.22300), saving model to 'checkpoints/epoch=1-step=2-val_loss=0.2230.ckpt' as top 2
+Epoch 2, global step 3: 'val_loss' reached 0.17680 (best 0.17680), saving model to 'checkpoints/epoch=2-step=3-val_loss=0.1768.ckpt' as top 3
+Epoch 3, global step 4: 'val_loss' reached 0.15583 (best 0.15583), saving model to 'checkpoints/epoch=3-step=4-val_loss=0.1558.ckpt' as top 4
+
+Epoch 6:   0%|          | 0/2 [00:00<?, ?it/s, loss=0.23, v_num=18q2]
+Epoch 5, global step 6: 'val_loss' reached 0.13189 (best 0.13189), saving model to 'checkpoints/epoch=5-step=6-val_loss=0.1319-v1.ckpt' as top 6
+Epoch 6, global step 7: 'val_loss' reached 0.11654 (best 0.11654), saving model to 'checkpoints/epoch=6-step=7-val_loss=0.1165.ckpt' as top 7
+Epoch 7, global step 8: 'val_loss' reached 0.10299 (best 0.10299), saving model to 'checkpoints/epoch=7-step=8-val_loss=0.1030-v1.ckpt' as top 8
+
+Epoch 9:   0%|          | 0/2 [00:00<?, ?it/s, loss=0.192, v_num=18q2]
+Epoch 9, global step 10: 'val_loss' reached 0.08459 (best 0.08459), saving model to 'checkpoints/epoch=9-step=10-val_loss=0.0846.ckpt' as top 10
+Epoch 10, global step 11: 'val_loss' reached 0.07763 (best 0.07763), saving model to 'checkpoints/epoch=10-step=11-val_loss=0.0776-v1.ckpt' as top 11
+Epoch 11, global step 12: 'val_loss' reached 0.07318 (best 0.07318), saving model to 'checkpoints/epoch=11-step=12-val_loss=0.0732.ckpt' as top 12
+Epoch 12, global step 13: 'val_loss' reached 0.06815 (best 0.06815), saving model to 'checkpoints/epoch=12-step=13-val_loss=0.0682.ckpt' as top 13
+
+Epoch 13: 100%|██████████| 2/2 [00:00<00:00,  9.45it/s, loss=0.151, v_num=18q2]
+Epoch 14, global step 15: 'val_loss' reached 0.06332 (best 0.06332), saving model to 'checkpoints/epoch=14-step=15-val_loss=0.0633-v2.ckpt' as top 15
+Epoch 15, global step 16: 'val_loss' reached 0.06081 (best 0.06081), saving model to 'checkpoints/epoch=15-step=16-val_loss=0.0608.ckpt' as top 16
+Epoch 16, global step 17: 'val_loss' reached 0.06067 (best 0.06067), saving model to 'checkpoints/epoch=16-step=17-val_loss=0.0607-v2.ckpt' as top 17
+
+
+Epoch 19: 100%|██████████| 2/2 [00:00<00:00,  4.41it/s, loss=0.124, v_num=18q2]
+Epoch 18, global step 19: 'val_loss' reached 0.05803 (best 0.05803), saving model to 'checkpoints/epoch=18-step=19-val_loss=0.0580-v3.ckpt' as top 19
+Epoch 19, global step 20: 'val_loss' reached 0.05716 (best 0.05716), saving model to 'checkpoints/epoch=19-step=20-val_loss=0.0572-v3.ckpt' as top 20
+`Trainer.fit` stopped: `max_epochs=20` reached.
