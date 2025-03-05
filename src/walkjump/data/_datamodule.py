@@ -11,6 +11,25 @@ from walkjump.constants import ALPHABET_AHO
 from ._batch import AbBatch
 from ._dataset import AbDataset
 
+# TOTRACK
+#@dataclass
+#class AbDataModule(LightningDataModule):
+#    csv_data_path: str
+#    batch_size: int = 64
+#    num_workers: int = 1
+#
+#    dataset: pd.DataFrame = field(init=False)
+#    alphabet: LabelEncoder = field(init=False, default=ALPHABET_AHO)
+#
+#    def setup(self, stage: str):
+#        match stage:
+#            case "fit" | "validate" | "test":
+#                # TOTRACK
+#                #self.dataset = pd.read_csv(self.csv_data_path, compression="gzip")
+#                self.dataset = pd.read_csv(self.csv_data_path)
+#
+#            case _:
+#                raise ValueError(f"Unreognized 'stage': {stage}")
 
 @dataclass
 class AbDataModule(LightningDataModule):
@@ -21,15 +40,20 @@ class AbDataModule(LightningDataModule):
     dataset: pd.DataFrame = field(init=False)
     alphabet: LabelEncoder = field(init=False, default=ALPHABET_AHO)
 
+    def __post_init__(self):
+        super().__init__()  # Ensure LightningDataModule is properly initialized
+
     def setup(self, stage: str):
         match stage:
             case "fit" | "validate" | "test":
-                self.dataset = pd.read_csv(self.csv_data_path, compression="gzip")
+                self.dataset = pd.read_csv(self.csv_data_path)
             case _:
                 raise ValueError(f"Unreognized 'stage': {stage}")
-
     def _make_dataloader(self, partition: Literal["train", "val", "test"]) -> DataLoader:
-        df = self.dataset[self.dataset.partition == partition]
+        # TOTRACK
+        #df = self.dataset[self.dataset.partition == partition]
+        # TODO: make sure that this doesn't create any issues where the test and val datsets become everything and suddenly you have an issue where the fit method performs weird because of that.
+        df = self.dataset
         dataset = AbDataset(df, self.alphabet)
         return DataLoader(
             dataset,

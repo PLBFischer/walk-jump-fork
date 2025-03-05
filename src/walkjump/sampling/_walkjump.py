@@ -181,22 +181,24 @@ def walkjump(
         xhats[:, mask_idxs, :] = seed_tensor_masked
 
     seqs = token_string_from_tensor(xhats, ALPHABET_AHO, from_logits=True)
+    # TOTRACK
+    #fv_heavy_aho_sample_list = [seq[:LENGTH_FV_HEAVY_AHO] for seq in seqs]
+    #fv_light_aho_sample_list = [seq[LENGTH_FV_HEAVY_AHO:] for seq in seqs]
+#
+    #fv_heavy_aho_seed_list = token_string_from_tensor(
+    #    seed_tensor[:, :LENGTH_FV_HEAVY_AHO], ALPHABET_AHO, from_logits=True
+    #)
+    #fv_light_aho_seed_list = token_string_from_tensor(
+    #    seed_tensor[:, :LENGTH_FV_LIGHT_AHO], ALPHABET_AHO, from_logits=True
+    #)
+#
+    #return pd.DataFrame(
+    #    {
+    #        "fv_heavy_aho": fv_heavy_aho_sample_list,
+    #        "fv_light_aho": fv_light_aho_sample_list,
+    #        "fv_heavy_aho_seed": fv_heavy_aho_seed_list,
+    #        "fv_light_aho_seed": fv_light_aho_seed_list,
+    #    }
+    #)
 
-    fv_heavy_aho_sample_list = [seq[:LENGTH_FV_HEAVY_AHO] for seq in seqs]
-    fv_light_aho_sample_list = [seq[LENGTH_FV_HEAVY_AHO:] for seq in seqs]
-
-    fv_heavy_aho_seed_list = token_string_from_tensor(
-        seed_tensor[:, :LENGTH_FV_HEAVY_AHO], ALPHABET_AHO, from_logits=True
-    )
-    fv_light_aho_seed_list = token_string_from_tensor(
-        seed_tensor[:, :LENGTH_FV_LIGHT_AHO], ALPHABET_AHO, from_logits=True
-    )
-
-    return pd.DataFrame(
-        {
-            "fv_heavy_aho": fv_heavy_aho_sample_list,
-            "fv_light_aho": fv_light_aho_sample_list,
-            "fv_heavy_aho_seed": fv_heavy_aho_seed_list,
-            "fv_light_aho_seed": fv_light_aho_seed_list,
-        }
-    )
+    return seqs

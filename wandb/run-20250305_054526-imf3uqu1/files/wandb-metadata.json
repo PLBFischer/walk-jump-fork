@@ -1,0 +1,24 @@
+{
+    "os": "Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28",
+    "python": "3.10.16",
+    "heartbeatAt": "2025-03-05T10:45:26.822856",
+    "startedAt": "2025-03-05T10:45:26.343476",
+    "docker": null,
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "gpu_count": 1,
+    "cpu_count": 64,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/my_experiment.py",
+    "codePath": "my_experiment.py",
+    "git": {
+        "remote": "https://github.com/PLBFischer/walk-jump-fork.git",
+        "commit": "e0cddc19078729d28b481a5d2b21a2ec010dd9ca"
+    },
+    "email": "paolo.lb.fischer@gmail.com",
+    "root": "/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork",
+    "host": "holygpu7c26201.rc.fas.harvard.edu",
+    "username": "pafischer",
+    "executable": "/n/netscratch/mahadevan_lab/Everyone/pafischer/walk_jump_co/bin/python"
+}

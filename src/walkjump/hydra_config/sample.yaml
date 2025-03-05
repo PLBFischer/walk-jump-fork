@@ -17,10 +17,14 @@ langevin:
   chunksize: 8
 
 designs:
-  output_csv: samples.csv
-  redesign_regions: null
+  output_csv: '/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_samples.csv'
+  # TOTRACK
+  #redesign_regions: null
+  redesign_regions: '/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv'
   seeds: denovo
   num_samples: 100
-  limit_seeds: 10
+  # TOTRACK
+  #limit_seeds: 10
+  limit_seeds: false
 
 device: null

@@ -1,0 +1,143 @@
+2025-03-05 05:08:51,879 INFO    StreamThr :4165553 [internal.py:wandb_internal():89] W&B internal server running at pid: 4165553, started at: 2025-03-05 05:08:51.877409
+2025-03-05 05:08:51,879 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: status
+2025-03-05 05:08:51,883 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: status
+2025-03-05 05:08:51,884 DEBUG   SenderThread:4165553 [sender.py:send():235] send: header
+2025-03-05 05:08:51,884 INFO    WriterThread:4165553 [datastore.py:open_for_write():77] open: ./wandb/run-20250305_050851-gd5xd44w/run-gd5xd44w.wandb
+2025-03-05 05:08:51,894 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: check_version
+2025-03-05 05:08:51,894 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: check_version
+2025-03-05 05:08:52,036 DEBUG   SenderThread:4165553 [sender.py:send():235] send: run
+2025-03-05 05:08:52,052 INFO    SenderThread:4165553 [sender.py:_maybe_setup_resume():489] checking resume status for None/walk-jump-fork/gd5xd44w
+2025-03-05 05:08:52,433 INFO    SenderThread:4165553 [dir_watcher.py:__init__():169] watching files in: ./wandb/run-20250305_050851-gd5xd44w/files
+2025-03-05 05:08:52,433 INFO    SenderThread:4165553 [sender.py:_start_run_threads():809] run started: gd5xd44w with start time 1741169331
+2025-03-05 05:08:52,433 DEBUG   SenderThread:4165553 [sender.py:send():235] send: summary
+2025-03-05 05:08:52,436 INFO    SenderThread:4165553 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2025-03-05 05:08:52,436 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: run_start
+2025-03-05 05:08:52,458 DEBUG   HandlerThread:4165553 [meta.py:__init__():36] meta init
+2025-03-05 05:08:52,458 DEBUG   HandlerThread:4165553 [meta.py:__init__():50] meta init done
+2025-03-05 05:08:52,458 DEBUG   HandlerThread:4165553 [meta.py:probe():210] probe
+2025-03-05 05:08:52,466 DEBUG   HandlerThread:4165553 [meta.py:_setup_git():200] setup git
+2025-03-05 05:08:52,492 DEBUG   HandlerThread:4165553 [meta.py:_setup_git():207] setup git done
+2025-03-05 05:08:52,492 DEBUG   HandlerThread:4165553 [meta.py:_save_pip():54] save pip
+2025-03-05 05:08:52,495 DEBUG   HandlerThread:4165553 [meta.py:_save_pip():68] save pip done
+2025-03-05 05:08:52,495 DEBUG   HandlerThread:4165553 [meta.py:_save_conda():75] save conda
+2025-03-05 05:08:53,435 INFO    Thread-13 :4165553 [dir_watcher.py:_on_file_created():217] file/dir created: ./wandb/run-20250305_050851-gd5xd44w/files/conda-environment.yaml
+2025-03-05 05:08:53,435 INFO    Thread-13 :4165553 [dir_watcher.py:_on_file_created():217] file/dir created: ./wandb/run-20250305_050851-gd5xd44w/files/wandb-summary.json
+2025-03-05 05:08:53,435 INFO    Thread-13 :4165553 [dir_watcher.py:_on_file_created():217] file/dir created: ./wandb/run-20250305_050851-gd5xd44w/files/requirements.txt
+2025-03-05 05:08:54,947 DEBUG   HandlerThread:4165553 [meta.py:_save_conda():85] save conda done
+2025-03-05 05:08:54,947 DEBUG   HandlerThread:4165553 [meta.py:probe():248] probe done
+2025-03-05 05:08:54,954 DEBUG   SenderThread:4165553 [sender.py:send():235] send: files
+2025-03-05 05:08:54,954 INFO    SenderThread:4165553 [sender.py:_save_file():944] saving file wandb-metadata.json with policy now
+2025-03-05 05:08:54,965 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: stop_status
+2025-03-05 05:08:54,965 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: stop_status
+2025-03-05 05:08:55,091 DEBUG   SenderThread:4165553 [sender.py:send():235] send: metric
+2025-03-05 05:08:55,092 DEBUG   SenderThread:4165553 [sender.py:send():235] send: metric
+2025-03-05 05:08:55,092 WARNING SenderThread:4165553 [sender.py:send_metric():902] Seen metric with glob (shouldnt happen)
+2025-03-05 05:08:55,202 DEBUG   SenderThread:4165553 [sender.py:send():235] send: config
+2025-03-05 05:08:55,283 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:55,283 DEBUG   SenderThread:4165553 [sender.py:send():235] send: exit
+2025-03-05 05:08:55,283 INFO    SenderThread:4165553 [sender.py:send_exit():371] handling exit code: 1
+2025-03-05 05:08:55,283 INFO    SenderThread:4165553 [sender.py:send_exit():373] handling runtime: 2
+2025-03-05 05:08:55,286 INFO    SenderThread:4165553 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2025-03-05 05:08:55,286 INFO    SenderThread:4165553 [sender.py:send_exit():379] send defer
+2025-03-05 05:08:55,286 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:55,286 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: defer
+2025-03-05 05:08:55,286 INFO    HandlerThread:4165553 [handler.py:handle_request_defer():154] handle defer: 0
+2025-03-05 05:08:55,286 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: defer
+2025-03-05 05:08:55,286 INFO    SenderThread:4165553 [sender.py:send_request_defer():388] handle sender defer: 0
+2025-03-05 05:08:55,286 INFO    SenderThread:4165553 [sender.py:transition_state():392] send defer: 1
+2025-03-05 05:08:55,286 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: defer
+2025-03-05 05:08:55,286 INFO    HandlerThread:4165553 [handler.py:handle_request_defer():154] handle defer: 1
+2025-03-05 05:08:55,322 INFO    Thread-16 :4165553 [upload_job.py:push():137] Uploaded file /tmp/tmpygq4pxwawandb/5qqqw6gp-wandb-metadata.json
+2025-03-05 05:08:55,376 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: defer
+2025-03-05 05:08:55,376 INFO    SenderThread:4165553 [sender.py:send_request_defer():388] handle sender defer: 1
+2025-03-05 05:08:55,376 INFO    SenderThread:4165553 [sender.py:transition_state():392] send defer: 2
+2025-03-05 05:08:55,376 DEBUG   SenderThread:4165553 [sender.py:send():235] send: stats
+2025-03-05 05:08:55,376 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: defer
+2025-03-05 05:08:55,376 INFO    HandlerThread:4165553 [handler.py:handle_request_defer():154] handle defer: 2
+2025-03-05 05:08:55,377 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: defer
+2025-03-05 05:08:55,377 INFO    SenderThread:4165553 [sender.py:send_request_defer():388] handle sender defer: 2
+2025-03-05 05:08:55,377 INFO    SenderThread:4165553 [sender.py:transition_state():392] send defer: 3
+2025-03-05 05:08:55,377 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: defer
+2025-03-05 05:08:55,377 INFO    HandlerThread:4165553 [handler.py:handle_request_defer():154] handle defer: 3
+2025-03-05 05:08:55,377 DEBUG   SenderThread:4165553 [sender.py:send():235] send: summary
+2025-03-05 05:08:55,379 INFO    SenderThread:4165553 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2025-03-05 05:08:55,379 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: defer
+2025-03-05 05:08:55,379 INFO    SenderThread:4165553 [sender.py:send_request_defer():388] handle sender defer: 3
+2025-03-05 05:08:55,379 INFO    SenderThread:4165553 [sender.py:transition_state():392] send defer: 4
+2025-03-05 05:08:55,379 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: defer
+2025-03-05 05:08:55,379 INFO    HandlerThread:4165553 [handler.py:handle_request_defer():154] handle defer: 4
+2025-03-05 05:08:55,380 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: defer
+2025-03-05 05:08:55,380 INFO    SenderThread:4165553 [sender.py:send_request_defer():388] handle sender defer: 4
+2025-03-05 05:08:55,386 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:55,436 INFO    Thread-13 :4165553 [dir_watcher.py:_on_file_modified():230] file/dir modified: ./wandb/run-20250305_050851-gd5xd44w/files/conda-environment.yaml
+2025-03-05 05:08:55,436 INFO    Thread-13 :4165553 [dir_watcher.py:_on_file_modified():230] file/dir modified: ./wandb/run-20250305_050851-gd5xd44w/files/wandb-summary.json
+2025-03-05 05:08:55,436 INFO    Thread-13 :4165553 [dir_watcher.py:_on_file_created():217] file/dir created: ./wandb/run-20250305_050851-gd5xd44w/files/output.log
+2025-03-05 05:08:55,436 INFO    Thread-13 :4165553 [dir_watcher.py:_on_file_created():217] file/dir created: ./wandb/run-20250305_050851-gd5xd44w/files/wandb-metadata.json
+2025-03-05 05:08:55,561 INFO    SenderThread:4165553 [sender.py:transition_state():392] send defer: 5
+2025-03-05 05:08:55,561 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:55,561 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: defer
+2025-03-05 05:08:55,561 INFO    HandlerThread:4165553 [handler.py:handle_request_defer():154] handle defer: 5
+2025-03-05 05:08:55,561 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: defer
+2025-03-05 05:08:55,561 INFO    SenderThread:4165553 [sender.py:send_request_defer():388] handle sender defer: 5
+2025-03-05 05:08:55,561 INFO    SenderThread:4165553 [dir_watcher.py:finish():283] shutting down directory watcher
+2025-03-05 05:08:55,662 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:56,436 INFO    Thread-13 :4165553 [dir_watcher.py:_on_file_modified():230] file/dir modified: ./wandb/run-20250305_050851-gd5xd44w/files/config.yaml
+2025-03-05 05:08:56,437 INFO    SenderThread:4165553 [dir_watcher.py:finish():313] scan: ./wandb/run-20250305_050851-gd5xd44w/files
+2025-03-05 05:08:56,437 INFO    SenderThread:4165553 [dir_watcher.py:finish():327] scan save: ./wandb/run-20250305_050851-gd5xd44w/files/conda-environment.yaml conda-environment.yaml
+2025-03-05 05:08:56,437 INFO    SenderThread:4165553 [dir_watcher.py:finish():327] scan save: ./wandb/run-20250305_050851-gd5xd44w/files/config.yaml config.yaml
+2025-03-05 05:08:56,438 INFO    SenderThread:4165553 [dir_watcher.py:finish():327] scan save: ./wandb/run-20250305_050851-gd5xd44w/files/output.log output.log
+2025-03-05 05:08:56,439 INFO    SenderThread:4165553 [dir_watcher.py:finish():327] scan save: ./wandb/run-20250305_050851-gd5xd44w/files/requirements.txt requirements.txt
+2025-03-05 05:08:56,440 INFO    SenderThread:4165553 [dir_watcher.py:finish():327] scan save: ./wandb/run-20250305_050851-gd5xd44w/files/wandb-metadata.json wandb-metadata.json
+2025-03-05 05:08:56,440 INFO    SenderThread:4165553 [dir_watcher.py:finish():327] scan save: ./wandb/run-20250305_050851-gd5xd44w/files/wandb-summary.json wandb-summary.json
+2025-03-05 05:08:56,440 INFO    SenderThread:4165553 [sender.py:transition_state():392] send defer: 6
+2025-03-05 05:08:56,440 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:56,441 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: defer
+2025-03-05 05:08:56,441 INFO    HandlerThread:4165553 [handler.py:handle_request_defer():154] handle defer: 6
+2025-03-05 05:08:56,441 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: defer
+2025-03-05 05:08:56,441 INFO    SenderThread:4165553 [sender.py:send_request_defer():388] handle sender defer: 6
+2025-03-05 05:08:56,441 INFO    SenderThread:4165553 [file_pusher.py:finish():177] shutting down file pusher
+2025-03-05 05:08:56,541 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:56,541 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:56,642 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:56,642 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:56,742 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:56,743 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:56,838 INFO    Thread-20 :4165553 [upload_job.py:push():137] Uploaded file ./wandb/run-20250305_050851-gd5xd44w/files/wandb-summary.json
+2025-03-05 05:08:56,843 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:56,843 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:56,855 INFO    Thread-18 :4165553 [upload_job.py:push():137] Uploaded file ./wandb/run-20250305_050851-gd5xd44w/files/config.yaml
+2025-03-05 05:08:56,918 INFO    Thread-19 :4165553 [upload_job.py:push():137] Uploaded file ./wandb/run-20250305_050851-gd5xd44w/files/requirements.txt
+2025-03-05 05:08:56,923 INFO    Thread-17 :4165553 [upload_job.py:push():137] Uploaded file ./wandb/run-20250305_050851-gd5xd44w/files/conda-environment.yaml
+2025-03-05 05:08:56,944 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:56,944 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:57,044 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:57,045 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:57,123 INFO    Thread-12 (_thread_body):4165553 [sender.py:transition_state():392] send defer: 7
+2025-03-05 05:08:57,123 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: defer
+2025-03-05 05:08:57,123 INFO    HandlerThread:4165553 [handler.py:handle_request_defer():154] handle defer: 7
+2025-03-05 05:08:57,123 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: defer
+2025-03-05 05:08:57,123 INFO    SenderThread:4165553 [sender.py:send_request_defer():388] handle sender defer: 7
+2025-03-05 05:08:57,145 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:57,212 INFO    SenderThread:4165553 [sender.py:transition_state():392] send defer: 8
+2025-03-05 05:08:57,212 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:57,212 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: defer
+2025-03-05 05:08:57,212 INFO    HandlerThread:4165553 [handler.py:handle_request_defer():154] handle defer: 8
+2025-03-05 05:08:57,212 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: defer
+2025-03-05 05:08:57,212 INFO    SenderThread:4165553 [sender.py:send_request_defer():388] handle sender defer: 8
+2025-03-05 05:08:57,212 INFO    SenderThread:4165553 [sender.py:transition_state():392] send defer: 9
+2025-03-05 05:08:57,212 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: defer
+2025-03-05 05:08:57,212 DEBUG   SenderThread:4165553 [sender.py:send():235] send: final
+2025-03-05 05:08:57,212 INFO    HandlerThread:4165553 [handler.py:handle_request_defer():154] handle defer: 9
+2025-03-05 05:08:57,212 DEBUG   SenderThread:4165553 [sender.py:send():235] send: footer
+2025-03-05 05:08:57,213 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: defer
+2025-03-05 05:08:57,213 INFO    SenderThread:4165553 [sender.py:send_request_defer():388] handle sender defer: 9
+2025-03-05 05:08:57,313 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: poll_exit
+2025-03-05 05:08:57,313 DEBUG   SenderThread:4165553 [sender.py:send_request():249] send_request: poll_exit
+2025-03-05 05:08:57,313 INFO    SenderThread:4165553 [file_pusher.py:join():182] waiting for file pusher
+2025-03-05 05:08:57,606 DEBUG   HandlerThread:4165553 [handler.py:handle_request():131] handle_request: shutdown
+2025-03-05 05:08:57,606 INFO    HandlerThread:4165553 [handler.py:finish():739] shutting down handler
+2025-03-05 05:08:58,212 INFO    WriterThread:4165553 [datastore.py:close():281] close: ./wandb/run-20250305_050851-gd5xd44w/run-gd5xd44w.wandb
+2025-03-05 05:08:58,506 INFO    SenderThread:4165553 [sender.py:finish():1075] shutting down sender
+2025-03-05 05:08:58,506 INFO    SenderThread:4165553 [file_pusher.py:finish():177] shutting down file pusher
+2025-03-05 05:08:58,506 INFO    SenderThread:4165553 [file_pusher.py:join():182] waiting for file pusher
+2025-03-05 05:08:58,607 INFO    MainThread:4165553 [internal.py:handle_exit():79] Internal process exited

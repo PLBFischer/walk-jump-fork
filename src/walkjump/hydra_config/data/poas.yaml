@@ -1,5 +1,7 @@
 _target_: walkjump.data.AbDataModule
 
-csv_data_path: ???
+# TOTRACK | TODO: modify this csv_data_path in such a way that when running on multiple GPUs through parallel processes
+#csv_data_path: ???
+csv_data_path: '/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv'
 batch_size: 64
 num_workers: 1

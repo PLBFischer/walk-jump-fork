@@ -1,0 +1,25 @@
+2025-03-05 05:06:06,392 INFO    MainThread:4165143 [wandb_setup.py:_flush():75] Loading settings from /n/home10/pafischer/.config/wandb/settings
+2025-03-05 05:06:06,392 INFO    MainThread:4165143 [wandb_setup.py:_flush():75] Loading settings from /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/wandb/settings
+2025-03-05 05:06:06,392 INFO    MainThread:4165143 [wandb_setup.py:_flush():75] Loading settings from environment variables: {'api_key': '***REDACTED***', '_require_service': 'True'}
+2025-03-05 05:06:06,392 INFO    MainThread:4165143 [wandb_setup.py:_flush():75] Inferring run settings from compute environment: {'program_relpath': 'my_experiment.py', 'program': '/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/my_experiment.py'}
+2025-03-05 05:06:06,392 INFO    MainThread:4165143 [wandb_init.py:_log_setup():386] Logging user logs to ./wandb/run-20250305_050606-q2jfj6z1/logs/debug.log
+2025-03-05 05:06:06,392 INFO    MainThread:4165143 [wandb_init.py:_log_setup():387] Logging internal logs to ./wandb/run-20250305_050606-q2jfj6z1/logs/debug-internal.log
+2025-03-05 05:06:06,392 INFO    MainThread:4165143 [wandb_init.py:init():420] calling init triggers
+2025-03-05 05:06:06,392 INFO    MainThread:4165143 [wandb_init.py:init():425] wandb.init called with sweep_config: {}
+config: {}
+2025-03-05 05:06:06,392 INFO    MainThread:4165143 [wandb_init.py:init():471] starting backend
+2025-03-05 05:06:06,393 INFO    MainThread:4165143 [backend.py:_multiprocessing_setup():99] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-03-05 05:06:06,398 INFO    MainThread:4165143 [wandb_init.py:init():480] backend started and connected
+2025-03-05 05:06:06,399 INFO    MainThread:4165143 [wandb_init.py:init():550] updated telemetry
+2025-03-05 05:06:06,432 INFO    MainThread:4165143 [wandb_init.py:init():581] communicating current version
+2025-03-05 05:06:06,482 INFO    MainThread:4165143 [wandb_init.py:init():586] got version response upgrade_message: "wandb version 0.19.8 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2025-03-05 05:06:06,483 INFO    MainThread:4165143 [wandb_init.py:init():596] communicating run to backend with 30 second timeout
+2025-03-05 05:06:06,826 INFO    MainThread:4165143 [wandb_init.py:init():624] starting run threads in backend
+2025-03-05 05:06:10,481 INFO    MainThread:4165143 [wandb_run.py:_console_start():1827] atexit reg
+2025-03-05 05:06:10,482 INFO    MainThread:4165143 [wandb_run.py:_redirect():1701] redirect: SettingsConsole.WRAP
+2025-03-05 05:06:10,483 INFO    MainThread:4165143 [wandb_run.py:_redirect():1738] Wrapping output streams.
+2025-03-05 05:06:10,483 INFO    MainThread:4165143 [wandb_run.py:_redirect():1762] Redirects installed.
+2025-03-05 05:06:10,483 INFO    MainThread:4165143 [wandb_init.py:init():651] run started, returning control to user process
+2025-03-05 05:06:10,764 INFO    MainThread:4165143 [wandb_run.py:_config_callback():966] config_cb None None {'cfg': {'dryrun': False, 'data': {'_target_': 'walkjump.data.AbDataModule', 'csv_data_path': '/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv', 'batch_size': 64, 'num_workers': 1}, 'model': {'model_cfg': {'arch': {'_target_': 'walkjump.model.arch.ByteNetArch', 'n_tokens': 21, 'd_model': 128, 'n_layers': 35, 'kernel_size': 3, 'max_dilation': 128, 'slim': True, 'activation': 'silu', 'final_layernorm': True}, 'hyperparameters': {'lr': 0.0001, 'weight_decay': 0.01, 'sigma': 1.0, 'warmup_batches': 1, 'lr_start_factor': 0.1}}, '_target_': 'walkjump.model.DenoiseModel'}, 'callbacks': {'model_checkpoint': {'_target_': 'lightning.pytorch.callbacks.ModelCheckpoint', 'dirpath': 'checkpoints', 'filename': '{epoch}-{step}-{val_loss:.4f}', 'monitor': 'val_loss', 'save_top_k': -1, 'mode': 'min', 'verbose': True, 'save_last': True}, 'early_stopping': {'_target_': 'lightning.pytorch.callbacks.EarlyStopping', 'monitor': 'val_loss', 'min_delta': 0, 'patience': 3, 'mode': 'min'}, 'lr_monitor': {'_target_': 'lightning.pytorch.callbacks.LearningRateMonitor', 'logging_interval': 'step'}}, 'logger': {'_target_': 'lightning.pytorch.loggers.WandbLogger', 'save_dir': '.', 'offline': False, 'project': None, 'entity': None, 'group': None, 'notes': None, 'tags': None}, 'trainer': {'_target_': 'lightning.pytorch.Trainer', 'accelerator': 'gpu', 'devices': 1, 'num_nodes': 1, 'accumulate_grad_batches': 1, 'gradient_clip_val': 0.0, 'gradient_clip_algorithm': 'norm', 'precision': 32, 'max_epochs': 20, 'max_steps': -1, 'val_check_interval': 0.99}, 'setup': {'torch': {'_target_': 'torch.set_float32_matmul_precision', 'precision': 'medium'}, 'seed': {'_target_': 'lightning.pytorch.seed_everything', 'seed': 15855310, 'workers': True}}}}
+2025-03-05 05:06:14,122 WARNING MsgRouterThr:4165143 [router.py:message_loop():76] message_loop has been closed

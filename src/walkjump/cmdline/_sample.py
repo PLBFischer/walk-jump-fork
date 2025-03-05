@@ -7,6 +7,22 @@ from omegaconf import DictConfig, OmegaConf
 from walkjump.cmdline.utils import instantiate_redesign_mask, instantiate_seeds
 from walkjump.sampling import walkjump
 
+import os
+import csv
+def write_list_to_csv(string_list, csv_path):
+    # If the CSV file already exists, delete it
+    if os.path.exists(csv_path):
+        os.remove(csv_path)
+    
+    # Write the CSV file with a single column "sequence"
+    with open(csv_path, mode='w', newline='') as csv_file:
+        writer = csv.writer(csv_file)
+        # Write header
+        writer.writerow(['sequence'])
+        # Write each string as a new row in the "sequence" column
+        for item in string_list:
+            writer.writerow([item])
+
 
 @hydra.main(version_base=None, config_path="../hydra_config", config_name="sample")
 def sample(cfg: DictConfig) -> bool:
@@ -40,8 +56,11 @@ def sample(cfg: DictConfig) -> bool:
             mask_idxs=mask_idxs,
             chunksize=cfg.designs.chunksize,
         )
-        sample_df.drop_duplicates(subset=["fv_heavy_aho", "fv_light_aho"], inplace=True)
+        # TOTRACK
+        #sample_df.drop_duplicates(subset=["fv_heavy_aho", "fv_light_aho"], inplace=True)
         print(f"Writing {len(sample_df)} samples to {cfg.designs.output_csv}")
-        sample_df.to_csv(cfg.designs.output_csv, index=False)
+        # TOTRACK
+        #sample_df.to_csv(cfg.designs.output_csv, index=False)
+        write_list_to_csv(sample_df,cfg.designs.output_csv)
 
     return True

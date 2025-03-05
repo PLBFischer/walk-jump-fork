@@ -39,18 +39,28 @@ def instantiate_redesign_mask(redesign_regions: Iterable[str]) -> list[int]:
     )
     return mask_idxs
 
+# TOTRACK
+#def instantiate_seeds(seeds_cfg: DictConfig) -> list[str]:
+#    if seeds_cfg.seeds == "denovo":
+#        seed_batch = random_discrete_seeds(seeds_cfg.limit_seeds, onehot=False)
+#    else:
+#        seed_df = pd.read_csv(seeds_cfg.seeds)
+#        dataset = AbDataset(seed_df)
+#        seed_batch = torch.stack(
+#            [dataset[i] for i in range(seeds_cfg.limit_seeds or len(dataset))], dim=0
+#        )
+#
+#    return token_string_from_tensor(seed_batch, alphabet=ALPHABET_AHO, from_logits=False)
 
+# IMPORTANT
 def instantiate_seeds(seeds_cfg: DictConfig) -> list[str]:
-    if seeds_cfg.seeds == "denovo":
-        seed_batch = random_discrete_seeds(seeds_cfg.limit_seeds, onehot=False)
-    else:
-        seed_df = pd.read_csv(seeds_cfg.seeds)
-        dataset = AbDataset(seed_df)
-        seed_batch = torch.stack(
-            [dataset[i] for i in range(seeds_cfg.limit_seeds or len(dataset))], dim=0
-        )
 
-    return token_string_from_tensor(seed_batch, alphabet=ALPHABET_AHO, from_logits=False)
+    seed_df = pd.read_csv(seeds_cfg.seeds)
+
+    seed_sequence_list = seed_df["sequence"].tolist()
+
+    return seed_sequence_list
+
 
 
 def instantiate_model_for_sample_mode(

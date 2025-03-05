@@ -1,4 +1,5 @@
-import dotenv
+# TOTRACK
+#import dotenv
 import hydra
 import lightning.pytorch as pl
 import wandb
@@ -7,7 +8,8 @@ from omegaconf import DictConfig, OmegaConf
 
 from walkjump.cmdline.utils import instantiate_callbacks
 
-dotenv.load_dotenv(".env")
+# TOTRACK
+#dotenv.load_dotenv(".env")
 
 
 @hydra.main(version_base=None, config_path="../hydra_config", config_name="train")
