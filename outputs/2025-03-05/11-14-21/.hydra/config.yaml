@@ -1,0 +1,87 @@
+langevin:
+  sigma: 1.0
+  delta: 0.5
+  lipschitz: 1.0
+  friction: 1.0
+  steps: 20
+  chunksize: 8
+designs:
+  output_csv: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_samples.csv
+  redesign_regions: null
+  seeds: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv
+  num_samples: 1
+  limit_seeds: false
+  chunksize: 8
+device: null
+data:
+  _target_: walkjump.data.AbDataModule
+  csv_data_path: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv
+  batch_size: 64
+  num_workers: 1
+model:
+  model_cfg:
+    arch:
+      _target_: walkjump.model.arch.ByteNetArch
+      n_tokens: 20
+      d_model: 128
+      n_layers: 35
+      kernel_size: 3
+      max_dilation: 128
+      slim: true
+      activation: silu
+      final_layernorm: true
+    hyperparameters:
+      lr: 0.0001
+      weight_decay: 0.01
+      sigma: 1.0
+      warmup_batches: 1
+      lr_start_factor: 0.1
+  _target_: walkjump.model.DenoiseModel
+callbacks:
+  model_checkpoint:
+    _target_: lightning.pytorch.callbacks.ModelCheckpoint
+    dirpath: checkpoints
+    filename: '{epoch}-{step}-{val_loss:.4f}'
+    monitor: val_loss
+    save_top_k: -1
+    mode: min
+    verbose: true
+    save_last: true
+  early_stopping:
+    _target_: lightning.pytorch.callbacks.EarlyStopping
+    monitor: val_loss
+    min_delta: 0
+    patience: 3
+    mode: min
+  lr_monitor:
+    _target_: lightning.pytorch.callbacks.LearningRateMonitor
+    logging_interval: step
+logger:
+  _target_: lightning.pytorch.loggers.WandbLogger
+  save_dir: .
+  offline: false
+  project: null
+  entity: null
+  group: null
+  notes: null
+  tags: null
+trainer:
+  _target_: lightning.pytorch.Trainer
+  accelerator: gpu
+  devices: 1
+  num_nodes: 1
+  accumulate_grad_batches: 1
+  gradient_clip_val: 0.0
+  gradient_clip_algorithm: norm
+  precision: 32
+  max_epochs: 20
+  max_steps: -1
+  val_check_interval: 0.99
+setup:
+  torch:
+    _target_: torch.set_float32_matmul_precision
+    precision: medium
+  seed:
+    _target_: lightning.pytorch.seed_everything
+    seed: 15855310
+    workers: true

@@ -7,4 +7,4 @@
 #SBATCH -e e
 #SBATCH --gres=gpu:1
 
-python my_experiment.py
+python main_operator.py

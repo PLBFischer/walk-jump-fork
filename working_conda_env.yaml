@@ -1,0 +1,5 @@
+name: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork
+channels:
+  - conda-forge
+  - pytorch
+prefix: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork

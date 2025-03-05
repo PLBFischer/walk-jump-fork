@@ -1,0 +1,118 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.10
+    framework: huggingface
+    huggingface_version: 4.48.0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    m:
+    - 1: trainer/global_step
+      6:
+      - 3
+    - 1: val_loss
+      5: 1
+      6:
+      - 1
+    - 1: epoch
+      5: 1
+      6:
+      - 1
+    python_version: 3.10.16
+    start_time: 1741189470
+    t:
+      1:
+      - 1
+      - 5
+      - 11
+      2:
+      - 1
+      - 5
+      - 11
+      3:
+      - 2
+      - 7
+      - 23
+      4: 3.10.16
+      5: 0.12.10
+      6: 4.48.0
+      8:
+      - 5
+cfg:
+  desc: null
+  value:
+    callbacks:
+      early_stopping:
+        _target_: lightning.pytorch.callbacks.EarlyStopping
+        min_delta: 0
+        mode: min
+        monitor: val_loss
+        patience: 3
+      lr_monitor:
+        _target_: lightning.pytorch.callbacks.LearningRateMonitor
+        logging_interval: step
+      model_checkpoint:
+        _target_: lightning.pytorch.callbacks.ModelCheckpoint
+        dirpath: checkpoints
+        filename: '{epoch}-{step}-{val_loss:.4f}'
+        mode: min
+        monitor: val_loss
+        save_last: true
+        save_top_k: -1
+        verbose: true
+    data:
+      _target_: walkjump.data.AbDataModule
+      batch_size: 64
+      csv_data_path: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv
+      num_workers: 1
+    dryrun: false
+    logger:
+      _target_: lightning.pytorch.loggers.WandbLogger
+      entity: null
+      group: null
+      notes: null
+      offline: false
+      project: null
+      save_dir: .
+      tags: null
+    model:
+      _target_: walkjump.model.DenoiseModel
+      model_cfg:
+        arch:
+          _target_: walkjump.model.arch.ByteNetArch
+          activation: silu
+          d_model: 128
+          final_layernorm: true
+          kernel_size: 3
+          max_dilation: 128
+          n_layers: 35
+          n_tokens: 20
+          slim: true
+        hyperparameters:
+          lr: 0.0001
+          lr_start_factor: 0.1
+          sigma: 1.0
+          warmup_batches: 1
+          weight_decay: 0.01
+    setup:
+      seed:
+        _target_: lightning.pytorch.seed_everything
+        seed: 15855310
+        workers: true
+      torch:
+        _target_: torch.set_float32_matmul_precision
+        precision: medium
+    trainer:
+      _target_: lightning.pytorch.Trainer
+      accelerator: gpu
+      accumulate_grad_batches: 1
+      devices: 1
+      gradient_clip_algorithm: norm
+      gradient_clip_val: 0.0
+      max_epochs: 20
+      max_steps: -1
+      num_nodes: 1
+      precision: 32
+      val_check_interval: 0.99
