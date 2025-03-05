@@ -1,5 +1,7 @@
 _target_: walkjump.model.arch.ByteNetArch
-n_tokens: 21
+# TOTRACK
+#n_tokens: 21
+n_tokens: 20
 d_model: 128
 n_layers: 35
 kernel_size: 3

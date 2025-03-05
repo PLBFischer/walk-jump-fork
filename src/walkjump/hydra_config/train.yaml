@@ -8,3 +8,6 @@ defaults:
   - setup: default.yaml
 
 dryrun: false
+
+## TOTRACK
+#ckpt_path: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/checkpoints/running_checkpoint.ckpt

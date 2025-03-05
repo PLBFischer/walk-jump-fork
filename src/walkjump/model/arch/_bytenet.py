@@ -182,7 +182,9 @@ class ByteNetArch(nn.Module):
         slim: bool = True,
         activation: str = "silu",
         rank=None,
-        n_tokens: int = 21,
+        # TOTRACK
+        #n_tokens: int = 21,
+        n_tokens: int = 20,
         final_layernorm: bool = True,
     ):
         super().__init__()

@@ -37,8 +37,12 @@ def train(cfg: DictConfig) -> bool:
     if rank_zero_only.rank == 0 and isinstance(trainer.logger, pl.loggers.WandbLogger):
         trainer.logger.experiment.config.update({"cfg": log_cfg})
 
-    if not cfg.dryrun:
-        trainer.fit(model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+    # TOTRACK
+    #if not cfg.dryrun:
+    #    trainer.fit(model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+    trainer.fit(model, datamodule=datamodule)
+    #IMPORTANT
+    trainer.save_checkpoint("/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/checkpoints/running_checkpoint.ckpt")
 
     wandb.finish()
     return True

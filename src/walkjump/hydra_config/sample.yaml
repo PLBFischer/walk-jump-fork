@@ -5,7 +5,9 @@ defaults:
 model:
   _target_: walkjump.cmdline.utils.instantiate_model_for_sample_mode
   model_type: denoise
-  checkpoint_path: ???
+  # TOTRACK
+  checkpoint_path: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/checkpoints/running_checkpoint.ckpt
+  #checkpoint_path: ???
   denoise_path: null
 
 langevin:
@@ -18,10 +20,11 @@ langevin:
 
 designs:
   output_csv: '/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_samples.csv'
+  redesign_regions: null
+  #redesign_regions: '/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv'
   # TOTRACK
-  #redesign_regions: null
-  redesign_regions: '/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv'
-  seeds: denovo
+  seeds: '/n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv'
+  #seeds: denovo
   num_samples: 100
   # TOTRACK
   #limit_seeds: 10

@@ -14,7 +14,9 @@ class LMSArch(nn.Module):
         reg_l2_norm: int = 5,
         kernel_sizes: Iterable[int] = (15, 5, 3),
         hidden: int = 32,
-        n_tokens: int = 21,
+        #TOTRACK
+        #n_tokens: int = 21,
+        n_tokens: int = 20,
         friction: float = 1.0,
         activation: str = "relu",
     ):

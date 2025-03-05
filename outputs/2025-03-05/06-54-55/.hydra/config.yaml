@@ -1,0 +1,27 @@
+model:
+  _target_: walkjump.cmdline.utils.instantiate_model_for_sample_mode
+  model_type: denoise
+  checkpoint_path: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/checkpoints/running_checkpoint.ckpt
+  denoise_path: null
+langevin:
+  sigma: 1.0
+  delta: 0.5
+  lipschitz: 1.0
+  friction: 1.0
+  steps: 20
+  chunksize: 8
+designs:
+  output_csv: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_samples.csv
+  redesign_regions: null
+  seeds: /n/netscratch/mahadevan_lab/Everyone/pafischer/walk-jump-fork/running_csv.csv
+  num_samples: 100
+  limit_seeds: false
+device: null
+setup:
+  torch:
+    _target_: torch.set_float32_matmul_precision
+    precision: medium
+  seed:
+    _target_: lightning.pytorch.seed_everything
+    seed: 15855310
+    workers: true

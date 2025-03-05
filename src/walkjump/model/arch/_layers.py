@@ -37,7 +37,9 @@ class SeqCNN(nn.Module):
     def __init__(
         self,
         chain_length: int,
-        vocab_size: int = 21,
+        # TOTRACK
+        #vocab_size: int = 21,
+        vocab_size: int = 20,
         n_positional: int = 20,
         hidden_features: int = 128,
         kernel_sizes: Iterable[int] = (15, 5, 3),

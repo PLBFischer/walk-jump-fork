@@ -40,10 +40,15 @@ def sample(cfg: DictConfig) -> bool:
         print(f"using device {cfg.device}")
         device = torch.device(cfg.device)
 
-    mask_idxs = instantiate_redesign_mask(cfg.designs.redesign_regions or [])
-    seeds = instantiate_seeds(cfg.designs)
+    # TOTRACK
+    #mask_idxs = instantiate_redesign_mask(cfg.designs.redesign_regions or [])
+    mask_idxs = instantiate_redesign_mask([])
 
-    if not cfg.dryrun:
+    seeds = instantiate_seeds(cfg.designs)
+    
+    # TOTRACK
+    #if not cfg.dryrun:
+    if True:
         model = hydra.utils.instantiate(cfg.model).to(device)
         sample_df = walkjump(
             seeds,
